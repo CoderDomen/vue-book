@@ -297,7 +297,7 @@ export default {
     // 图书初始化
     initEpub(url) {
       this.book = new Epub(url); //这里epub解析url下载后的blob对象
-      console.log(this.book);
+      // console.log(this.book);
 
       this.setCurrentBook(this.book);
       this.initRenditon();

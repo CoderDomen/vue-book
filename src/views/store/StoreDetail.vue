@@ -275,7 +275,7 @@ export default {
               rootFile = rootFile.substring(1, rootFile.length);
             }
             this.opf = `${process.env.VUE_APP_EPUB_OPF_URL}/${this.fileName}/${rootFile}`;
-            console.log(this.opf);
+            // console.log(this.opf);
             // this.book = new Epub(this.opf); 
             this.parseBook(this.opf);
           } else {
