@@ -180,7 +180,7 @@ export default {
     },
     readBook() {    
       this.$router.push({
-        path: `/ebook/${this.categoryText}|${this.fileName}`
+        path: `/ebook/${this.bookItem.categoryText}|${this.fileName}`
       });
     },
     trialListening() {
