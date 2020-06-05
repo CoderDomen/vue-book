@@ -276,6 +276,7 @@ export default {
             }
             this.opf = `${process.env.VUE_APP_EPUB_OPF_URL}/${this.fileName}/${rootFile}`;
             // console.log(this.opf);
+          // this.opf = `${process.env.VUE_APP_EPUB_URL}/${this.categoryText}/${this.fileName}.epub`;
             // this.book = new Epub(this.opf); 
             this.parseBook(this.opf);
           } else {
@@ -293,7 +294,7 @@ export default {
           this.rendition = this.book.renderTo("preview", {
             width: window.innerWidth > 640 ? 640 : window.innerWidth,
             height: window.innerHeight,
-            // method: "default"
+            method: "default"
           });
         }
         if (!location) {
@@ -364,8 +365,8 @@ export default {
             color: #333;
           }
         }
-        // #preview {
-        // }
+        #preview {
+        }
         .book-detail-content-item-wrapper {
           .book-detail-content-item {
             padding: px2rem(15) 0;

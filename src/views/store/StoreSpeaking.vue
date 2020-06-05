@@ -297,9 +297,8 @@ export default {
       });
       if (this.chapter) {
         this.section = this.book.spine.get(this.chapter.href);
-        this.rendition.display(this.section.href).then(section => {
-          
-          const currentPage = this.currentBook.rendition.currentLocation();
+        this.rendition.display(this.section.href).then(section => {       
+          const currentPage = this.rendition.currentLocation();
           const cfibase = section.cfiBase;
 
           const cfistart = currentPage.start.cfi

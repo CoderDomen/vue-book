@@ -30,7 +30,7 @@ import {
 
 import Epub from "epubjs";
 import { getLocalForage } from "../../utils/localForage";
-global.epub = Epub;
+global.ePub = Epub;
 
 export default {
   mixins: [ebookMixin],
@@ -209,8 +209,8 @@ export default {
     initRenditon() {
       this.rendition = this.book.renderTo("read", {
         width: innerWidth,
-        height: innerHeight
-        // method:'default'          //用于微信端显示
+        height: innerHeight,
+        method :'default'        
       });
       const location = getLocation(this.fileName);
       this.display(location, () => {
@@ -296,6 +296,7 @@ export default {
 
     // 图书初始化
     initEpub(url) {
+      // console.log(url);
       this.book = new Epub(url); //这里epub解析url下载后的blob对象
       // console.log(this.book);
 
