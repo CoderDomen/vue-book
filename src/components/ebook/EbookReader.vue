@@ -51,6 +51,7 @@ export default {
     // 将路由中参数传递到vuex中改变state中的fileName数据，使用this.fileName的数据就是state的值
     // console.log(this.$route.params.fileName.split("|").join("/"));
     const books = this.$route.params.fileName.split("|");
+    // console.log(books);
     const fileName = books[1];
     // 从本地查找电子书
     getLocalForage(fileName, (err, blob) => {
@@ -61,8 +62,11 @@ export default {
         });
       } else {
         // console.log("在线缓存电子书");
+        // console.log(books.join("/"));
         this.setFileName(books.join("/")).then(() => {
-          const url = `${process.env.VUE_APP_EPUB_URL}/${this.fileName}.epub`;
+          // console.log(this.fileName);
+          const url = process.env.VUE_APP_EPUB_URL + '/' +  this.fileName + '.epub';
+          // console.log(url);
           this.initEpub(url);
         });
       }
